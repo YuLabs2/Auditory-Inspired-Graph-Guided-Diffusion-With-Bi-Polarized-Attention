@@ -1,0 +1,428 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<h1>Graph Structural Diffusion With Tri-Polarized Attention for Multi-Channel Speech Enhancement</h1>
+<h2 class="authors">Authors: s
+
+  <span class="author-name">Lirui Wu</span>, 
+  <a href="mailto:jjyu@bjtu.edu.cn" class="author-name">Jingjing Yu*</a>, 
+  <span class="author-name">Ranran Liu</span>, 
+  <span class="author-name">Chi Yang</span>
+</h2>
+
+<h3 class="conference">Submitted to IEEE Transactions on Audio, Speech, and Language Processing 2026</h3>
+
+
+
+<!-- ############################################ 圆阵##################################################### -->
+
+  <div  class="table-name">
+   
+    <strong class="wav-title">Wav samples with different input SNRs</strong> 
+  </div>
+  <div class="table-container">
+    <table  id="3-方针和圆阵-圆阵-cocktail party" class="wav1">
+      <th>
+        <th>SNR=-5dB</th>
+        <th>SNR=0dB</th>
+        <th>SNR=5dB</th>
+        <th>SNR=10dB</th>
+        
+        
+       </th> 
+       
+      <tr>
+        <td>
+         Noisy
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\noisy\noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\noisy\noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\noisy\noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\noisy\noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+              
+      </tr>
+
+      <tr>
+        <td>
+          CNN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CNN\enhanced_CNN_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CNN\enhanced_CNN_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CNN\enhanced_CNN_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CNN\enhanced_CNN_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+       
+      </tr>
+
+      <tr>
+        <td>
+          UNet-GCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\UNet-GCN\enhanced_UNet_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\UNet-GCN\enhanced_UNet_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\UNet-GCN\enhanced_UNet_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\UNet-GCN\enhanced_UNet_noisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+
+      <tr>
+        <td>
+          DM-STGCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DM-STGCN\enhanced_STGCSEN_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DM-STGCN\enhanced_STGCSEN_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DM-STGCN\enhanced_STGCSEN_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DM-STGCN\enhanced_STGCSEN_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+      <tr>
+        <td>
+          Diffwav
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DiffuSE\enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DiffuSE\enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DiffuSE\enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DiffuSE\enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+  
+      </tr>
+      <tr>
+        <td>
+          Dose
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DOSE\DOSEenhancednoisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DOSE\DOSEenhancednoisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DOSE\DOSEenhancednoisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\DOSE\DOSEenhancednoisy_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+      <tr>
+        <td>
+          CDiffuSE
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CDiffuSE\CDiffuSE_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CDiffuSE\CDiffuSE_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CDiffuSE\CDiffuSE_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\CDiffuSE\CDiffuSE_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+      <tr>
+        <td>
+          G-DiffuMSE
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\STGCN_CDiffuSE_Ltotal\STGCN-CDiffuSE-Ltotal_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr-5_tl-35.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\STGCN_CDiffuSE_Ltotal\STGCN-CDiffuSE-Ltotal_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr0_tl-25.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\STGCN_CDiffuSE_Ltotal\STGCN-CDiffuSE-Ltotal_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr5_tl-21.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\wav1\STGCN_CDiffuSE_Ltotal\STGCN-CDiffuSE-Ltotal_enhanced_fileid_1_reader_01326_Bus_10_Wind_chime_13_snr10_tl-33.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+     
+    </table>
+  </div>
+
+
+  <div  class="table-name">
+   
+    <strong class="wav-title">Wav samples on unseen realistic noisy scenes</strong> 
+  </div>
+  <div class="table-container">
+    <table  id="3-方针和圆阵-圆阵-cocktail party" class="wav1">
+      <th>
+        <th>BUS</th>
+        <th>STR</th>
+        <th>CAF</th>
+        <th>PED</th>
+        
+        
+       </th> 
+       
+      <tr>
+        <td>
+         Noisy
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/noisy/noisy_fileid_7_bus.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/noisy/noisy_fileid_15_str.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/noisy/noisy_fileid_7_caf.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/noisy/noisy_fileid_15_ped.wav"></audio>
+          </div>
+        </td>
+            
+      </tr>
+
+      <tr>
+        <td>
+          CNN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/CNN/enhance-CNN-fileid_7-bus.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/CNN/enhanced_CNN_fileid_15-str.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/CNN/enhanced_CNN_fileid_7-caf.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/CNN/enhanced_CNN_fileid_15-ped.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+
+      <tr>
+        <td>
+          UNet-GCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/UNet-GCN/UNet_GCN_fileid_7-bus.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/UNet-GCN/UNet_GCN_fileid_15-str.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/UNet-GCN/UNet_GCN_fileid_7-caf.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/UNet-GCN/UNet_GCN_fileid_15-ped.wav"></audio>
+          </div>
+        </td>
+      
+      </tr>
+
+      <tr>
+        <td>
+          Dose
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_DOSE/DOSEenhancednoisy_fileid_7_bus.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_DOSE/DOSEenhancednoisy_fileid_15_str.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_DOSE/DOSEenhancednoisy_fileid_7_caf.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_DOSE/DOSEenhancednoisy_fileid_15_ped.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+      <tr>
+        <td>
+          CDiffuSE
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_CDiffuSE/CDiffuSE_enhanced_fileid_7_bus.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_CDiffuSE/CDiffuSE_enhanced_fileid_15_str.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_CDiffuSE/CDiffuSE_enhanced_fileid_7_caf.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/baseline_CDiffuSE/CDiffuSE_enhanced_fileid_15_ped.wav"></audio>
+          </div>
+        </td>
+        
+      </tr>
+      <tr>
+        <td>
+          G-DiffuMSE
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/STGCCN_Diffusion_Ltotal/STGCCN_Diffusion_Ltotal_enhanced_fileid_7_bus.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/STGCCN_Diffusion_Ltotal/STGCCN_Diffusion_Ltotal_enhanced_fileid_15_str.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/STGCCN_Diffusion_Ltotal/STGCCN_Diffusion_Ltotal_enhanced_fileid_7_caf.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav/wav2/STGCCN_Diffusion_Ltotal/STGCCN_Diffusion_Ltotal_enhanced_fileid_15_ped.wav"></audio>
+          </div>
+        </td>
+       
+      </tr>
+     
+    </table>
+  </div>
+
